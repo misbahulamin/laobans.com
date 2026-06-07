@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary colors */
+  --color-primary: hsl(215 50% 10%);
+  --color-primary-light: hsl(215 40% 20%);
+  --color-secondary: hsl(168 84% 32%);
+  --color-accent: hsl(199 89% 48%);
+
+  /* Background & surface */
+  --color-background: hsl(215 25% 6%);
+  --color-surface: hsl(215 25% 10%);
+  --color-muted: hsl(215 25% 8%);
+  --color-muted-foreground: hsl(215 16% 60%);
+  --color-foreground: hsl(0 0% 100%);
+
+  /* Dark theme colors */
+  --color-slate-800: hsl(215 25% 15%);
+  --color-slate-900: hsl(215 25% 10%);
+  --color-slate-950: hsl(215 25% 6%);
+
+  /* Amber/Orange brand colors */
+  --color-amber-400: hsl(38 92% 50%);
+  --color-amber-500: hsl(38 92% 50%);
+  --color-orange-500: hsl(25 95% 53%);
+
+  /* Semantic colors */
+  --color-success: hsl(152 60% 40%);
+  --color-warning: hsl(38 92% 50%);
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-info: hsl(205 80% 50%);
+
+  /* Border colors */
+  --color-border: hsl(215 25% 15%);
+  --color-input: hsl(215 25% 15%);
+  --color-ring: hsl(215 50% 10%);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Montserrat", system-ui, sans-serif;
+  --font-body: "Lato", system-ui, sans-serif;
+  --font-display: "Montserrat", system-ui, sans-serif;
+}
+
+/* Base styles */
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Gradient utilities */
+@utility gradient-blue {
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-accent));
+}
+
+@utility gradient-amber {
+  background-image: linear-gradient(to right, var(--color-amber-400), var(--color-orange-500));
+}
+
+@utility gradient-teal {
+  background-image: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+}
+
+@utility gradient-green {
+  background-image: linear-gradient(to right, var(--color-success), var(--color-secondary));
+}
+
+@utility gradient-purple {
+  background-image: linear-gradient(to right, #9333ea, #ec4899);
+}
+
+@utility gradient-teal {
+  background-image: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+}
+
+@utility gradient-green {
+  background-image: linear-gradient(to right, var(--color-success), var(--color-secondary));
+}
+
+@utility gradient-purple {
+  background-image: linear-gradient(to right, #9333ea, #ec4899);
+}
+
+/* Glass morphism */
+@utility glass-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+@utility glass-section {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+@utility glass-muted {
+  background-color: rgba(243, 244, 246, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* Pill gradients for status badges */
+@utility pill-gradient-info {
+  background-image: linear-gradient(to right, #3b82f6, #06b6d4);
+  color: white;
+}
+
+@utility pill-gradient-success {
+  background-image: linear-gradient(to right, #10b981, #14b8a6);
+  color: white;
+}
+
+@utility pill-gradient-warning {
+  background-image: linear-gradient(to right, #f59e0b, #f97316);
+  color: white;
+}
+
+@utility pill-gradient-danger {
+  background-image: linear-gradient(to right, #ef4444, #f43f5e);
+  color: white;
+}
+
+/* Custom scrollbar */
+@utility scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #e5e7eb transparent;
+}
+
+/* Animations */
+@utility animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Font utilities */
+@utility font-heading {
+  font-family: var(--font-heading);
+}
+
+@utility font-body {
+  font-family: var(--font-body);
+}
